@@ -1,34 +1,6 @@
-//  EJEMPLO DE FUNCIONES
-
-/*function formaDePago(tarjeta, contado, debito){
-
-    let pago = prompt("ingrese su forma de pago: contado - tarjeta - debito");
-
-    switch (pago) {
-        case "tarjeta":
-            alert("su interes es del 10%");
-
-            break;
-
-        case "debito":
-            alert("su interes es del 5%");
-            break;
-
-        case "contado":
-            alert("el precio final es el que esta publicado");
-
-            break;
-
-        default:
-            alert("operacion no definida");
-            break;
-    }
-}
-
-formaDePago();*/
 
 
-// EJEMPLO DE CALCULO DE INTERES:
+// EJEMPLO 1 - CALCULO DE INTERES:
 
  /*function precioTarjeta (precio,interes) {
   let suma = precio * interes;
@@ -40,7 +12,7 @@ formaDePago();*/
 precioTarjeta(`${formaDePago}`, parseFloat(0.10));*/
 
 
-//EJEMPLO DESCUENTO DEL IVA:
+//EJEMPLO 2 - DESCUENTO DEL IVA:
 
 /*const suma = (a,b) => a + b;
 const resta = (a, b) => a - b; 
@@ -54,7 +26,7 @@ let precioContado = resta(suma(precio,iva(precio)),descuento);
 console.log(precioContado);*/
 
 
-//EJEMPLO DE OBJETO
+//EJEMPLO 3 -  OBJETOS
 
 /*let precioRemeras ={
   largas: 1500,
@@ -72,7 +44,7 @@ const remera1 = new Remera("img","remeron",1500);
 console.log(remera1);*/
 
 
-//EJEMPLOS DE ARRAYS
+//EJEMPLO 4 - ARRAYS
 
 /*const arreglo1 = ["remera", "camisa", "sweaters", "buzos", "camperas", "jeans", "pantalones", "vestidos", "kimonos"];
 arreglo1.push ("polleras", "shorts");
@@ -82,6 +54,8 @@ for (let i = 0; i < arreglo1.length; i++){
   console.log(arreglo1[i].toLocaleUpperCase());
 }
 */
+
+//EJEMPLO 5 - FUNCION CONSTRUCTORA
 
 /*function Remera(img, nombre, precio) {
   this.img = img;
@@ -101,41 +75,13 @@ for (let index = 0; index < 10; index++) {
   
 }
 
-console.log(arreglo);
+console.log(arreglo);*/
 
 
-//FUNCIONES DE ALTO ORDEN
-
-CLASE 7
-
-function operaciones(op){
-    if(op === "sumar"){
-      return (a, b) => a + b;
-    }
-  
-    if(op === "restar"){
-      return (a, b) => a - b;
-    }
-  
-    if(op === "multiplicar"){
-      return (a, b) => a * b;
-    }
-  
-    if(op === "dividir"){
-      return (a, b) => a / b;
-    }
-  }
-  
-  let suma = operaciones("sumar");
-  let resta = operaciones("restar");
-  
-  console.log(suma(5,6));
-  console.log(resta(4, 1));*/
+// EJEMPLO 6 - FUNCIONES DE ALTO ORDEN
 
 
-
-
-  const productos = [
+  /*const productos = [
     {id: 1, nombre: "camisa", precio: 3000},
     {id: 2, nombre: "pantalon", precio: 10000},
     {id: 3, nombre: "sweaters", precio: 4000},
@@ -148,20 +94,42 @@ function operaciones(op){
 
   let nombre = prompt("ingrese el producto que busca");
   let busqueda = productos.find(prenda => prenda.nombre === nombre);
-  let mensaje = ` ID: ${busqueda.id}
+  let mensaje =`ID: ${busqueda.id}
   NOMBRE: ${busqueda.nombre}
   PRECIO: $${busqueda.precio}`;
-  alert(mensaje);
+  alert(mensaje);*/
 
-  //console.log(busqueda);
 
   /*EJEMPLO 2 
 
   let precio = prompt("ingrese el importe maximo que desea gastar");
   let busqueda = productos.filter (prenda => prenda.precio > precio);
-
-
   console.log(busqueda);*/
+
+  let contenedor =document.getElementById ("contenedor");
+  let parrafo = document.createElement ("p");
+  parrafo.innerHTML = "<h1>LA LINDA</h1>";
+  contenedor.append(parrafo);
+  parrafo.className = "fondo";
+
+
+  let personas = ["remera", "camisa", "sweaters", "buzos", "camperas", "jeans", "pantalones", "vestidos", "kimonos"];
+  let lista = document.getElementById ("personas");
+
+  for(const persona of personas){
+  let li = document.createElement ("li");
+  li.innerHTML = persona;
+  lista.append(li);
+  }
+
+
+  
+
+
+
+
+
+
 
 
 
