@@ -1,4 +1,17 @@
-.fondo{
-    background-color: rgb(124, 209, 124);
+
+.arriba{
+    background-color: rgb(120, 196, 120)
 }
-.
+.navbar-brand{
+    font-size: 40px;
+    font-weight: lighter;
+}
+#contenedor{
+    text-align: center;
+    
+}
+#btn{
+    background-color: rgb(238, 228, 228);
+    
+    text-decoration: none;
+}

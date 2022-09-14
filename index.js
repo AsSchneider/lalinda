@@ -106,11 +106,11 @@ console.log(arreglo);*/
   let busqueda = productos.filter (prenda => prenda.precio > precio);
   console.log(busqueda);*/
 
-  let contenedor =document.getElementById ("contenedor");
+  /*let contenedor =document.getElementById ("contenedor");
   let parrafo = document.createElement ("p");
-  parrafo.innerHTML = "<h1>LA LINDA</h1>";
+  parrafo.innerHTML = "<h2>ELEGI TUS FAVORITOS!</h2>";
   contenedor.append(parrafo);
-  parrafo.className = "fondo";
+
 
 
   let personas = ["remera", "camisa", "sweaters", "buzos", "camperas", "jeans", "pantalones", "vestidos", "kimonos"];
@@ -120,7 +120,38 @@ console.log(arreglo);*/
   let li = document.createElement ("li");
   li.innerHTML = persona;
   lista.append(li);
-  }
+  }*/
+
+ // DOM
+const productos = [
+  { id: 1, nombre: "camisa", precio: 10000},
+  { id: 2, nombre: "remera", precio: 5000},
+  { id: 3, nombre: "sweater", precio: 7000},
+  { id: 4, nombre: "jeans", precio: 14000},
+];
+
+let contenedor = document.getElementById("contenedor");
+let precio = parseInt(prompt("Ingrese el precio maximo que desea abonar para que le mostremos los productos disponibles"));
+
+let productosFiltrados = productos.filter(item => item.precio < precio);
+
+for (const producto of productosFiltrados) {
+  let div = document.createElement("div");
+  div.innerHTML = `<p> ID: ${producto.id}</p>
+                   <b>Producto: ${producto.nombre}</b>
+                   <b>${producto.precio}</b>`;
+
+  contenedor.append(div);
+}
+
+function agregar(){
+  alert("agregado al carrito");
+}
+
+let boton =document.getElementById("btn");
+boton.addEventListener("mouseup", agregar);
+
+
 
 
   

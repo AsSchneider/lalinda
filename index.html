@@ -5,18 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>LaLinda</title>
+
 </head>
 
 <body>
     <header>
+        <nav class="navbar arriba">
+            <div class="container-fluid">
+                <a class="navbar-brand">LA LINDA</a>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-success" type="submit">MI CARRITO</button>
+                </form>
+            </div>
+        </nav>
 
 
     </header>
     <main>
-        <section>
-            <div id ="contenedor"></div>
+        <section id="contenedor">
+
 
         </section>
         <section>
@@ -24,6 +35,14 @@
 
         </section>
         <section>
+            <div class="card" style="width: 18rem;">
+                <img src="./imagenes/jean.jpg" class="card-img-top" alt="jeans">
+                <div class="card-body">
+                    <h5 class="card-title">JEAN BASICO MELL</h5>
+                    <p class="card-text">$14.480 - COD. SP334001AA24</p>
+                    <a href="#" id="btn">Me lo llevo!</a>
+                </div>
+            </div>
 
         </section>
     </main>
@@ -35,6 +54,12 @@
 
 
     <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
