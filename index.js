@@ -124,11 +124,12 @@ console.log(arreglo);*/
 
  // DOM
 const productos = [
-  { id: 1, nombre: "camisa", precio: 10000},
+  { id: 1, img href="https://www.istockphoto.com/es/fotos/jeans", nombre: "camisa", precio: 10000},
   { id: 2, nombre: "remera", precio: 5000},
   { id: 3, nombre: "sweater", precio: 7000},
   { id: 4, nombre: "jeans", precio: 14000},
 ];
+
 
 let contenedor = document.getElementById("contenedor");
 let precio = parseInt(prompt("Ingrese el precio maximo que desea abonar para que le mostremos los productos disponibles"));
