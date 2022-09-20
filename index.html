@@ -9,7 +9,6 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>LaLinda</title>
-
 </head>
 
 <body>
@@ -22,44 +21,61 @@
                 </form>
             </div>
         </nav>
-
-
     </header>
     <main>
-        <section id="contenedor">
-
-
-        </section>
         <section>
-            <ul id="personas"></ul>
-
-        </section>
-        <section>
-            <div class="card" style="width: 18rem;">
-                <img src="./imagenes/jean.jpg" class="card-img-top" alt="jeans">
-                <div class="card-body">
-                    <h5 class="card-title">JEAN BASICO MELL</h5>
-                    <p class="card-text">$14.480 - COD. SP334001AA24</p>
-                    <a href="#" id="btn">Me lo llevo!</a>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./imagenes/portada.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagenes/portada1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagenes/portada2.jpg" class="d-block w-100" alt="...">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+        </section>
+        <section>
+            <div id="contenedor"></div>
 
         </section>
     </main>
 
     <footer>
-
-
+        <footer class="pie">
+            <p class="direccion">Corrientes 2457- Santa Fe.</p>
+            <ul class="redes__lista">
+                <li class="redes__lista__item"><a href="https://www.facebook.com" target="_blank"></a>facebook</i></li>
+                <li class="redes__lista__item"><a href="https://www.instagram.com" target="_blank"></a>instagram</li>
+                <li class="redes__lista__item"><a href="https://www.youtube.com" target="_blank">youtube</a></li>
+            </ul>
+            <a href="https://www.whatsapp.com/" target="_blank"><img src="./imagenes/wsp.png" alt="whatsapplogo"
+                    class="wsp"></a>
+            <span class="copi">&#169;Astrid Schenider 2022</span>
+        </footer>
     </footer>
 
-
-    <script src="./index.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
         crossorigin="anonymous"></script>
+    <script src="./index.js"></script>    
 </body>
 
 </html>

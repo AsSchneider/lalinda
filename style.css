@@ -1,17 +1,54 @@
-
-.arriba{
-    background-color: rgb(120, 196, 120)
+*{
+    margin: 0;
+    padding: 0;
 }
+
+body{
+    background-color: rgb(175, 197, 175)
+}
+
 .navbar-brand{
     font-size: 40px;
     font-weight: lighter;
 }
-#contenedor{
-    text-align: center;
-    
+
+/*FOOTER*/
+footer{
+    background-color: rgb(113, 136, 113);
 }
-#btn{
-    background-color: rgb(238, 228, 228);
-    
-    text-decoration: none;
+
+.redes__lista{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.direccion{
+    text-align: center;
+}
+.copi{
+    display: flex;
+    justify-content: end;
+}
+.wsp {
+    width: 40px;
+    position: fixed;
+    right: 0px;
+    top: 150px; 
+}
+.wsp:hover {
+    transform: scale(1.2);
+    transition: all 2s; 
+}
+/*HEADER*/
+#contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+.carousel-item{
+    opacity: 0.8;
+    height: 500px;
+
 }

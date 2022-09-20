@@ -123,34 +123,38 @@ console.log(arreglo);*/
   }*/
 
  // DOM
-const productos = [
-  { id: 1, img href="https://www.istockphoto.com/es/fotos/jeans", nombre: "camisa", precio: 10000},
-  { id: 2, nombre: "remera", precio: 5000},
-  { id: 3, nombre: "sweater", precio: 7000},
-  { id: 4, nombre: "jeans", precio: 14000},
+ const productos = [
+  { id: 1, img : "./imagenes/camisa.jpg", nombre: "camisa", precio: ("10000"), boton: "agregar al carrito"},
+  { id: 2, img : "./imagenes/remera.jpg", nombre: "remera", precio: ("5000"), boton: "agregar al carrito"},
+  { id: 3, img : "./imagenes/sweater.jpg", nombre: "sweater", precio: ("7100"), boton: "agregar al carrito"},
+  { id: 4, img : "./imagenes/jeans.jpg", nombre: "jeans", precio: ("14480"), boton: "agregar al carrito"},
+  { id: 5, img : "./imagenes/campera.jpg", nombre: "campera", precio: ("22000"), boton: "agregar al carrito"},
+  { id: 6, img : "./imagenes/buzo.jpg" , nombre: "buzo" , precio: ("11800"), boton: "agregar al carrito"},
 ];
 
+let contenedor = document.getElementById ("contenedor");
 
-let contenedor = document.getElementById("contenedor");
-let precio = parseInt(prompt("Ingrese el precio maximo que desea abonar para que le mostremos los productos disponibles"));
+for (const producto of productos){
 
-let productosFiltrados = productos.filter(item => item.precio < precio);
-
-for (const producto of productosFiltrados) {
-  let div = document.createElement("div");
-  div.innerHTML = `<p> ID: ${producto.id}</p>
-                   <b>Producto: ${producto.nombre}</b>
-                   <b>${producto.precio}</b>`;
-
-  contenedor.append(div);
+  let div = document.createElement ("div");
+  div.innerHTML = `<div class="card" style="width: 12rem;">
+                    <img src=${producto.img} class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">${producto.nombre}</h5>
+                      <p class="card-text">$${producto.precio}</p>
+                      <a href="#" class="btn btn-primary" id=btn${producto.id}>Me lo llevo!</a>
+                    </div>
+                  </div>`;
+contenedor.append(div);
 }
+
 
 function agregar(){
   alert("agregado al carrito");
 }
 
-let boton =document.getElementById("btn");
-boton.addEventListener("mouseup", agregar);
+let boton = document.getElementById("btn");
+boton.addEventListener("click", agregar);
 
 
 
