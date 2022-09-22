@@ -146,15 +146,23 @@ for (const producto of productos){
                     </div>
                   </div>`;
 contenedor.append(div);
+const boton = document.getElementById (`btn${producto.id}`)
+boton.addEventListener ("click", () =>{
+  alert(`Se agrego ${producto.nombre} al carrito`);
+
+})
 }
+localStorage.setItem ("productos", JSON.stringify(productos));
 
+function cambiarPrecio(nombre,precio){
+  let array = JSON.parse(localStorage.getItem("productos"));
 
-function agregar(){
-  alert("agregado al carrito");
+  const producto = array.find(elemento => elemento.nombre === nombre);
+  producto.precio = precio;
+
+  localStorage.setItem ("productos", JSON.stringify(array));
 }
-
-let boton = document.getElementById("btn");
-boton.addEventListener("click", agregar);
+cambiarPrecio ("camisa", "9000");
 
 
 

@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <header>
+    <header id="producto-contenedor">
         <nav class="navbar arriba">
             <div class="container-fluid">
-                <a class="navbar-brand">LA LINDA</a>
+                <a class="navbar-brand" href="#">LA LINDA</a>
                 <form class="d-flex" role="search">
                     <button class="btn btn-outline-success" type="submit">MI CARRITO</button>
                 </form>
@@ -52,14 +52,27 @@
             <div id="contenedor"></div>
 
         </section>
+        <section>
+            <form id="formulario">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-primary">registrarme</button>
+              </form>
+        </section>
     </main>
 
     <footer>
         <footer class="pie">
             <p class="direccion">Corrientes 2457- Santa Fe.</p>
             <ul class="redes__lista">
-                <li class="redes__lista__item"><a href="https://www.facebook.com" target="_blank"></a>facebook</i></li>
-                <li class="redes__lista__item"><a href="https://www.instagram.com" target="_blank"></a>instagram</li>
+                <li class="redes__lista__item"><a href="https://www.facebook.com" target="_blank">facebook></a></li>
+                <li class="redes__lista__item"><a href="https://www.instagram.com" target="_blank">instagram</a></li>
                 <li class="redes__lista__item"><a href="https://www.youtube.com" target="_blank">youtube</a></li>
             </ul>
             <a href="https://www.whatsapp.com/" target="_blank"><img src="./imagenes/wsp.png" alt="whatsapplogo"
@@ -75,6 +88,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
         crossorigin="anonymous"></script>
+    <script src="./carritoindex.js"></script>
     <script src="./index.js"></script>    
 </body>
 
