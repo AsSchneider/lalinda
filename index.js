@@ -23,10 +23,10 @@ boton.addEventListener ("click", () =>{
 
 let carrito = []
 
-document.addEventListener(`DOMContentloaded`, () => {
-  if (localStorage.getItem(`carrito`)) {
-    carrito = JSON.parse(localStorage.getItem(`carrito`))
-    actualizarCarrito()
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('carrito')){
+      carrito = JSON.parse(localStorage.getItem('carrito'))
+      actualizarCarrito()
   }
 })
 
@@ -63,9 +63,6 @@ const agregarAlCarrito = (prodId) => {
 
     })
   } else {
-
-
-
     const item = stockProductos.find((prod) => prod.id === prodId);
     carrito.push(item);
     console.log(carrito);
@@ -91,15 +88,26 @@ const actualizarCarrito = () => {
     <p>${prod.nombre}</p>
     <p>Precio: ${prod.precio}</p>
     <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-    <button onclick="eliminarDelCarrito(${prod.id})" class="fas fa-trash-alt">eliminar</button>
+    <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
     `
     contenedorCarrito.appendChild(div)
-    localStorage.setItem(`carrito`, JSON.stringify(carrito))
+    localStorage.setItem('carrito', JSON.stringify(carrito))
   })
 
   contadorCarrito.innerText = carrito.length
-  precioTotal.innerText = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0)
+  precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
 }
+let comprar = document. getElementById ("comprar");
+comprar.addEventListener ("click", () =>{
+ 
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Su compra se concreto con exito',
+    showConfirmButton: false,
+    timer: 1500
+  })
+})
 
 
 
