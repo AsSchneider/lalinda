@@ -1,25 +1,17 @@
-const stockProductos = [
+/*const stockProductos = [
   { id: 1, img: "./imagenes/camisa.jpg", nombre: "camisa", cantidad: 1, precio: ("10000"), boton: "agregar al carrito" },
   { id: 2, img: "./imagenes/remera.jpg", nombre: "remera", cantidad: 1, precio: ("5000"), boton: "agregar al carrito" },
   { id: 3, img: "./imagenes/sweater.jpg", nombre: "sweater", cantidad: 1, precio: ("7100"), boton: "agregar al carrito" },
   { id: 4, img: "./imagenes/jeans.jpg", nombre: "jeans", cantidad: 1, precio: ("14480"), boton: "agregar al carrito" },
   { id: 5, img: "./imagenes/campera.jpg", nombre: "campera", cantidad: 1, precio: ("22000"), boton: "agregar al carrito" },
   { id: 6, img: "./imagenes/buzo.jpg", nombre: "buzo", cantidad: 1, precio: ("11800"), boton: "agregar al carrito" },
-];
+]*/
 
 const contenedorProductos = document.getElementById("contenedor-productos");
 const contenedorCarrito = document.getElementById("carrito-contenedor");
 const botonVaciar = document.getElementById("vaciar-carrito");
 const contadorCarrito = document.getElementById("contadorCarrito");
 const precioTotal = document.getElementById("precioTotal");
-
-
-
-/*const boton = document.getElementById (`btn${producto.id}`)
-boton.addEventListener ("click", () =>{
-  alert(`Se agrego ${producto.nombre} al carrito`);
-})*/
-
 
 let carrito = []
 
@@ -36,22 +28,36 @@ botonVaciar.addEventListener(`click`, () => {
 
 })
 
-stockProductos.forEach((producto) => {
+fetch ("./data.json")
+.then(response => response.json())
+.then(data => {
+  data.forEach((producto) => {
+      const div = document.createElement("div");
+      div.classList.add("producto");
+      div.innerHTML = `
+      <img src=${producto.img} alt"">
+      <h3>${producto.nombre}</h3>
+      <p class="precioProducto">$${producto.precio}</p>
+      <button id="agregar${producto.id}" class="boton-agregar">Me lo llevo!<i class="fas fa-shopping-cart"></i></button>`
+      contenedorProductos.append(div);
+
+})
+
+/*stockProductos.forEach((producto) => {
   const div = document.createElement("div");
   div.classList.add("producto");
   div.innerHTML = `
   <img src=${producto.img} alt"">
   <h3>${producto.nombre}</h3>
   <p class="precioProducto">$${producto.precio}</p>
-  <button id="agregar${producto.id}" class="boton-agregar">Me lo llevo!<i class="fas fa-shopping-cart"></i></button>
-   `
-  contenedorProductos.append(div);
+  <button id="agregar${producto.id}" class="boton-agregar">Me lo llevo!<i class="fas fa-shopping-cart"></i></button>`
+  contenedorProductos.append(div);*/
 
   const boton = document.getElementById(`agregar${producto.id}`)
   boton.addEventListener(`click`, () => {
     agregarAlCarrito(producto.id)
   })
-})
+//})
 
 const agregarAlCarrito = (prodId) => {
   const existe = carrito.some(prod => prod.id === prodId)
@@ -95,11 +101,12 @@ const actualizarCarrito = () => {
   })
 
   contadorCarrito.innerText = carrito.length
-  precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
+  precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0);
 }
+
 let comprar = document. getElementById ("comprar");
 comprar.addEventListener ("click", () =>{
- 
+    
   Swal.fire({
     position: 'top-end',
     icon: 'success',
