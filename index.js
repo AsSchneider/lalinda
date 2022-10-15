@@ -22,26 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 
-botonVaciar.addEventListener(`click`, () => {
-  carrito.length = 0
-  actualizarCarrito();
 
-})
-
-fetch ("./data.json")
+fetch ("data.json")
 .then(response => response.json())
 .then(data => {
-  data.forEach((producto) => {
+  console.log(json);
+  data.forEach(producto => {
+
       const div = document.createElement("div");
       div.classList.add("producto");
       div.innerHTML = `
       <img src=${producto.img} alt"">
       <h3>${producto.nombre}</h3>
       <p class="precioProducto">$${producto.precio}</p>
-      <button id="agregar${producto.id}" class="boton-agregar">Me lo llevo!<i class="fas fa-shopping-cart"></i></button>`
+      <button id="agregar${producto.id}" class="boton-agregar">Me lo llevo!<i class="fas fa-shopping-cart"></i></button>
+      `;
+
       contenedorProductos.append(div);
 
 })
+})
+
 
 /*stockProductos.forEach((producto) => {
   const div = document.createElement("div");
@@ -115,25 +116,3 @@ comprar.addEventListener ("click", () =>{
     timer: 1500
   })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
