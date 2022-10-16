@@ -1,10 +1,10 @@
 [
-  { "id": 1, "img": "./imagenes/camisa.jpg", "nombre": "camisa", "cantidad": 1, "precio": 10000, "boton": "agregar al carrito" },
-  { "id": 2, "img": "./imagenes/remera.jpg", "nombre": "remera", "cantidad": 1, "precio": 5000, "boton": "agregar al carrito" },
-  { "id": 3, "img": "./imagenes/sweater.jpg", "nombre": "sweater", "cantidad": 1, "precio": 7100, "boton": "agregar al carrito" },
-  { "id": 4, "img": "./imagenes/jeans.jpg", "nombre": "jeans", "cantidad": 1, "precio": 14480, "boton": "agregar al carrito" },
-  { "id": 5, "img": "./imagenes/campera.jpg", "nombre": "campera", "cantidad": 1, "precio": 22000, "boton": "agregar al carrito" },
-  { "id": 6, "img": "./imagenes/buzo.jpg", "nombre": "buzo", "cantidad": 1, "precio": 11800, "boton": "agregar al carrito" }
+  { "id": 1, "img": "./imagenes/camisa.jpg", "nombre": "CAMISA", "cantidad": 1, "precio": 10000, "boton": "agregar al carrito" },
+  { "id": 2, "img": "./imagenes/remera.jpg", "nombre": "REMERA", "cantidad": 1, "precio": 5000, "boton": "agregar al carrito" },
+  { "id": 3, "img": "./imagenes/sweater.jpg", "nombre": "SWEATER", "cantidad": 1, "precio": 7100, "boton": "agregar al carrito" },
+  { "id": 4, "img": "./imagenes/jeans.jpg", "nombre": "JEANS", "cantidad": 1, "precio": 14480, "boton": "agregar al carrito" },
+  { "id": 5, "img": "./imagenes/campera.jpg", "nombre": "CAMPERA", "cantidad": 1, "precio": 22000, "boton": "agregar al carrito" },
+  { "id": 6, "img": "./imagenes/buzo.jpg", "nombre": "BUZO", "cantidad": 1, "precio": 11800, "boton": "agregar al carrito" }
 ]
 
 

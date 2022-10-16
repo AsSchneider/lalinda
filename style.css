@@ -19,7 +19,7 @@ h1 {
 #boton-carrito {
     border: none;
     color: rgb(76, 125, 91);
-    font-size: 30px;
+    font-size: 20px;
     background-color: white;
     border-radius: 30%;
     padding: 10px 20px;
@@ -52,7 +52,9 @@ h1 {
     padding: 10px;
     margin: 10px;
     margin-bottom: 20px;
-    box-shadow: 2px 6px  3px 3px rgb(0,0,0,0.3)
+    box-shadow: 2px 6px  3px 3px rgb(0,0,0,0.3);
+    text-align: center;
+    font-size: 14px;
 }
 .precioProducto{
     font-weight: 700;
@@ -61,8 +63,8 @@ h1 {
 .boton-agregar {
     background-color: rgb(76, 125, 91);
     color: white;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 300;
     padding: 5px;
     border: none;
 }
@@ -98,7 +100,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .5s;
     opacity: 0;
     visibility: hidden;
 }
@@ -114,8 +115,20 @@ h1 {
     min-width: 500px;
     padding: 20px;
     margin-top: -100%;
-    transition: all .5s;
 }
+.productoEnCarrito {
+    border-left: 5px solid lightblue;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.productoEnCarrito:hover {
+    border-left: 5px solid rgb(23, 65, 23);
+}
+
 
 .modal-active .modal-carrito {
     margin-top: 0;

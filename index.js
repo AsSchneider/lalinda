@@ -1,64 +1,64 @@
-/*const stockProductos = [
-  { id: 1, img: "./imagenes/camisa.jpg", nombre: "camisa", cantidad: 1, precio: ("10000"), boton: "agregar al carrito" },
-  { id: 2, img: "./imagenes/remera.jpg", nombre: "remera", cantidad: 1, precio: ("5000"), boton: "agregar al carrito" },
-  { id: 3, img: "./imagenes/sweater.jpg", nombre: "sweater", cantidad: 1, precio: ("7100"), boton: "agregar al carrito" },
-  { id: 4, img: "./imagenes/jeans.jpg", nombre: "jeans", cantidad: 1, precio: ("14480"), boton: "agregar al carrito" },
-  { id: 5, img: "./imagenes/campera.jpg", nombre: "campera", cantidad: 1, precio: ("22000"), boton: "agregar al carrito" },
-  { id: 6, img: "./imagenes/buzo.jpg", nombre: "buzo", cantidad: 1, precio: ("11800"), boton: "agregar al carrito" },
-]*/
-
 const contenedorProductos = document.getElementById("contenedor-productos");
 const contenedorCarrito = document.getElementById("carrito-contenedor");
 const botonVaciar = document.getElementById("vaciar-carrito");
 const contadorCarrito = document.getElementById("contadorCarrito");
 const precioTotal = document.getElementById("precioTotal");
+const botonComprar = document.getElementById("comprar");
+const portada = document.getElementById("portada");
+const footer = document.getElementById("pieDePagina");
+
 
 let carrito = []
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('carrito')){
-      carrito = JSON.parse(localStorage.getItem('carrito'))
-      actualizarCarrito()
+  if (localStorage.getItem('carrito')) {
+    carrito = JSON.parse(localStorage.getItem('carrito'))
+    actualizarCarrito()
   }
 })
 
-
-fetch ("data.json")
-.then(response => response.json())
-.then(data => {
-  console.log(json);
-  data.forEach(producto => {
-
-      const div = document.createElement("div");
-      div.classList.add("producto");
-      div.innerHTML = `
-      <img src=${producto.img} alt"">
-      <h3>${producto.nombre}</h3>
-      <p class="precioProducto">$${producto.precio}</p>
-      <button id="agregar${producto.id}" class="boton-agregar">Me lo llevo!<i class="fas fa-shopping-cart"></i></button>
-      `;
-
-      contenedorProductos.append(div);
-
-})
+botonVaciar.addEventListener('click', () => {
+  carrito.length = 0
+  actualizarCarrito()
 })
 
 
-/*stockProductos.forEach((producto) => {
-  const div = document.createElement("div");
-  div.classList.add("producto");
-  div.innerHTML = `
-  <img src=${producto.img} alt"">
-  <h3>${producto.nombre}</h3>
-  <p class="precioProducto">$${producto.precio}</p>
-  <button id="agregar${producto.id}" class="boton-agregar">Me lo llevo!<i class="fas fa-shopping-cart"></i></button>`
-  contenedorProductos.append(div);*/
+//array
+let prod = [];
 
-  const boton = document.getElementById(`agregar${producto.id}`)
-  boton.addEventListener(`click`, () => {
-    agregarAlCarrito(producto.id)
+let traerDatos = async () => {
+  let response = await fetch("./data.json");
+  let data = await response.json();
+  let productos = data;
+
+  data.forEach((producto) => {
+    prod.push(producto)
+  });
+
+  productos.forEach(producto => {
+    let div = document.createElement("div");
+    div.classList.add("producto");
+    div.innerHTML = `
+        <img src=${producto.img} alt"">
+        <h3>${producto.nombre}</h3>
+        <p class="precioProducto">$${producto.precio}</p>
+        <button id="agregar${producto.id}" class="boton-agregar">Me lo llevo!<i class="fas fa-shopping-cart"></i></button>`
+    contenedorProductos.append(div)
+
+    const boton = document.getElementById(`agregar${producto.id}`)
+    boton.addEventListener(`click`, () => {
+      agregarAlCarrito(producto.id)
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Agregado al carrito',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    })
   })
-//})
+}
+traerDatos();
 
 const agregarAlCarrito = (prodId) => {
   const existe = carrito.some(prod => prod.id === prodId)
@@ -70,7 +70,7 @@ const agregarAlCarrito = (prodId) => {
 
     })
   } else {
-    const item = stockProductos.find((prod) => prod.id === prodId);
+    const item = prod.find((prod) => prod.id === prodId);
     carrito.push(item);
     console.log(carrito);
   }
@@ -105,9 +105,11 @@ const actualizarCarrito = () => {
   precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0);
 }
 
-let comprar = document. getElementById ("comprar");
-comprar.addEventListener ("click", () =>{
-    
+
+comprar.addEventListener("click", () => {
+  carrito.length = 0
+  actualizarCarrito()
+
   Swal.fire({
     position: 'top-end',
     icon: 'success',
@@ -116,3 +118,49 @@ comprar.addEventListener ("click", () =>{
     timer: 1500
   })
 })
+
+//nodo portada
+
+let carrusel = document.createElement("carrusel");
+carrusel.innerHTML = `
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="./imagenes/portada.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+          <img src="./imagenes/portada1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+          <img src="./imagenes/portada2.jpg" class="d-block w-100" alt="...">
+      </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+    data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+    data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+  </button>
+  </div>`
+
+portada.appendChild(carrusel);
+
+//nodo footer
+
+let div = document.createElement("div");
+div.innerHTML = `
+  <p class="direccion">Seguinos!</p>
+  <ul class="redes__lista">
+      <li class="redes__lista__item"><a href="https://www.facebook.com" target="_blank">facebook</a></li>
+      <li class="redes__lista__item"><a href="https://www.instagram.com" target="_blank">instagram</a></li>
+  </ul>
+  <a href="https://www.whatsapp.com/" target="_blank"><img src="./imagenes/wsp.png" alt="whatsapplogo"
+        class="wsp"></a>
+  <span class="copi">&#169;Astrid Schneider 2022</span>`
+
+footer.appendChild(div);
